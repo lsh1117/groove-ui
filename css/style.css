@@ -5865,12 +5865,13 @@ body.is-modal-open {
 .gr-bottom-sheet {
   position: fixed;
   inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  display: none;
+  display: block;
+  visibility: hidden;
   z-index: 1000;
   font-family: inherit;
 }
 .gr-bottom-sheet--active {
-  display: block;
+  visibility: visible;
 }
 .gr-bottom-sheet__backdrop {
   position: absolute;
