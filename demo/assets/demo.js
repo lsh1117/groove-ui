@@ -98,18 +98,22 @@
         ];
 
         cssFiles.forEach(href => includeCSS(href));
-        jsFiles.forEach(src => includeJS(src));
+        jsFiles.forEach(src => includeJS(src,onJsLoad));
 
-        setTimeout(function(){
-            document.querySelectorAll("pre code.language-html").forEach((block) => {
-                const formatted = prettier.format(block.textContent, {
-                    parser: "html",
-                    plugins: prettierPlugins,
+        let cnt = 0;
+        function onJsLoad(){
+            cnt++;
+            if(cnt === 5){
+                document.querySelectorAll("pre code.language-html").forEach((block) => {
+                    const formatted = prettier.format(block.textContent, {
+                        parser: "html",
+                        plugins: prettierPlugins,
+                    });
+                    block.textContent = formatted;
+                    Prism.highlightElement(block);
                 });
-                block.textContent = formatted;
-                Prism.highlightElement(block);
-            });
-        },300);
+            }
+        }
     }
 
     if (document.readyState === 'loading') {
