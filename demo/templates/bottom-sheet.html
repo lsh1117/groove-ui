@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layer - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Bottom Sheet</h1>
+            <p>바텀시트 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 레이어 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 바텀시트</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <!-- bottom sheet -->
+                        <div class="gr-bottom-sheet" id="sheet">
+                            <div class="gr-bottom-sheet__backdrop" id="backdrop"></div> <!-- 배경 어둡게 -->
+                            <div class="gr-bottom-sheet__panel">
+                                <div class="gr-bottom-sheet__header">
+                                    <h2 class="gr-bottom-sheet__title">타이틀</h2>
+                                    <button class="gr-bottom-sheet__close" aria-label="닫기" id="close">&times;</button>
+                                </div>
+                                <div class="gr-bottom-sheet__body">
+                                    <p>여기에 본문 컨텐츠가 들어갑니다.</p>
+                                    <p>여러 요소도 넣을 수 있습니다.</p>
+                                </div>
+                                <div class="gr-bottom-sheet__footer">
+                                    <button class="gr-bottom-sheet__action">확인</button>
+                                    <button class="gr-bottom-sheet__action">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            const sheet = document.getElementById('sheet');
+                            const backdrop = document.getElementById('backdrop');
+                            const closeBtn = document.getElementById('close');
+
+                            function openSheet() {
+                                sheet.classList.add('gr-bottom-sheet--active');
+                            }
+                            function closeSheet() {
+                                sheet.classList.remove('gr-bottom-sheet--active');
+                            }
+
+                            backdrop.addEventListener('click', closeSheet);
+                            closeBtn.addEventListener('click', closeSheet);
+                        </script>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="article-header">
+                    <h2>버튼 클릭 시 열기</h2>
+                    <p>버튼 클릭 시 바텀시트 열기</p>
+                </div>
+                <div class="article-body">
+                    <button class="gr-btn gr-btn--primary" id="openBtn">Open Bottom Sheet</button>
+                    <script>
+                        // 예시: 버튼 클릭 시 열기
+                        document.getElementById('openBtn').addEventListener('click', openSheet);
+                    </script>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>
