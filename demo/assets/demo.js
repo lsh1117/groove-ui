@@ -42,7 +42,7 @@
         code.innerHTML = escapeHtml(html);
         pre.appendChild(code);
         codeWrap.appendChild(pre);
-        
+
 
         wrapper.appendChild(preview);
         wrapper.appendChild(toolbar);
@@ -88,16 +88,28 @@
             'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css',
             'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css'
         ];
-        
+
         const jsFiles = [
             'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js',
             'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js',
-            'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js'
+            'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js',
+            'https://unpkg.com/prettier@2.8.8/standalone.js',
+            'https://unpkg.com/prettier@2.8.8/parser-html.js'
         ];
-        
+
         cssFiles.forEach(href => includeCSS(href));
         jsFiles.forEach(src => includeJS(src));
-        
+
+        setTimeout(function(){
+            document.querySelectorAll("pre code.language-html").forEach((block) => {
+                const formatted = prettier.format(block.textContent, {
+                    parser: "html",
+                    plugins: prettierPlugins,
+                });
+                block.textContent = formatted;
+                Prism.highlightElement(block);
+            });
+        },300);
     }
 
     if (document.readyState === 'loading') {
