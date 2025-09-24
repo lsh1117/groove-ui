@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    Groove UI - Main Stylesheet
    ========================================================================== */
@@ -3278,6 +3279,175 @@ hr {
   cursor: default;
 }
 
+/* dropdown.scss */
+.gr-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-family: inherit;
+}
+.gr-dropdown__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; /* 화살표 버튼만 오른쪽 */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.gr-dropdown__header-arrow {
+  width: 16px;
+  height: 16px;
+  border: solid #666;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); /* 아래쪽 화살표 */
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.gr-dropdown__header-arrow--open {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg); /* 위쪽 화살표 */
+}
+.gr-dropdown__body {
+  display: none;
+  padding: 12px;
+  border-top: 1px solid #ccc;
+  background: #fafafa;
+}
+.gr-dropdown__body--open {
+  display: block;
+}
+
+/* toast.scss */
+.gr-toast {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  min-width: 280px;
+  max-width: 400px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #333;
+  opacity: 0;
+  pointer-events: none;
+  /* 기본적으로 숨김 → 애니메이션으로 표시 */
+  /* 위치 모드 */
+}
+.gr-toast--show {
+  -webkit-animation: toast-fade-in 0.3s ease forwards, toast-fade-out 0.3s ease 2.7s forwards;
+          animation: toast-fade-in 0.3s ease forwards, toast-fade-out 0.3s ease 2.7s forwards;
+}
+.gr-toast--top {
+  top: 24px;
+}
+.gr-toast--bottom {
+  bottom: 24px;
+}
+.gr-toast__icon {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.gr-toast__message {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* Fade In/Out Animation */
+@-webkit-keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -10px);
+            transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+}
+@keyframes toast-fade-in {
+  from {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -10px);
+            transform: translate(-50%, -10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+}
+@-webkit-keyframes toast-fade-out {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -10px);
+            transform: translate(-50%, -10px);
+    pointer-events: none;
+  }
+}
+@keyframes toast-fade-out {
+  from {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -10px);
+            transform: translate(-50%, -10px);
+    pointer-events: none;
+  }
+}
 /* ==========================================================================
    Typography Template
    ========================================================================== */

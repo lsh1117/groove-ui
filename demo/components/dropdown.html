@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dropdown - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 16px
+        }
+
+        .dropdown-demo {
+            margin-bottom: 24px;
+        }
+
+        .dropdown-demo h3 {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Dropdown JavaScript functionality */
+        .gr-dropdown {
+            position: relative;
+            display: inline-block;
+            width: 240px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #fff;
+            font-family: inherit;
+        }
+
+        .gr-dropdown__header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 8px 12px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .gr-dropdown__header-arrow {
+            width: 16px;
+            height: 16px;
+            border: solid #666;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            transition: transform 0.2s ease;
+        }
+
+        .gr-dropdown__header-arrow--open {
+            transform: rotate(-135deg);
+        }
+
+        .gr-dropdown__body {
+            display: none;
+            padding: 12px;
+            border-top: 1px solid #ccc;
+            background: #fafafa;
+        }
+
+        .gr-dropdown__body--open {
+            display: block;
+        }
+
+        .gr-dropdown__item {
+            padding: 8px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .gr-dropdown__item:hover {
+            background-color: #e9ecef;
+        }
+
+        .gr-dropdown__item--active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Size variants */
+        .gr-dropdown--sm {
+            width: 180px;
+        }
+
+        .gr-dropdown--lg {
+            width: 300px;
+        }
+
+        .gr-dropdown--xl {
+            width: 400px;
+        }
+
+        /* Style variants */
+        .gr-dropdown--primary {
+            border-color: #007bff;
+        }
+
+        .gr-dropdown--primary .gr-dropdown__header-arrow {
+            border-color: #007bff;
+        }
+
+        .gr-dropdown--success {
+            border-color: #28a745;
+        }
+
+        .gr-dropdown--success .gr-dropdown__header-arrow {
+            border-color: #28a745;
+        }
+
+        .gr-dropdown--danger {
+            border-color: #dc3545;
+        }
+
+        .gr-dropdown--danger .gr-dropdown__header-arrow {
+            border-color: #dc3545;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Dropdown</h1>
+            <p>드롭다운 컴포넌트의 크기, 스타일, 기능 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 드롭다운 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 드롭다운 컴포넌트</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-dropdown" data-title="기본 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">옵션 1</div>
+                                <div class="gr-dropdown__item">옵션 2</div>
+                                <div class="gr-dropdown__item">옵션 3</div>
+                                <div class="gr-dropdown__item">옵션 4</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 크기 변형 -->
+            <article>
+                <div class="article-header">
+                    <h2>크기</h2>
+                    <p>드롭다운 크기 변형</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-dropdown gr-dropdown--sm" data-title="Small 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Small 1</div>
+                                <div class="gr-dropdown__item">Small 2</div>
+                                <div class="gr-dropdown__item">Small 3</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown" data-title="Medium 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Medium 1</div>
+                                <div class="gr-dropdown__item">Medium 2</div>
+                                <div class="gr-dropdown__item">Medium 3</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown gr-dropdown--lg" data-title="Large 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Large 1</div>
+                                <div class="gr-dropdown__item">Large 2</div>
+                                <div class="gr-dropdown__item">Large 3</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown gr-dropdown--xl" data-title="XL 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">XL 1</div>
+                                <div class="gr-dropdown__item">XL 2</div>
+                                <div class="gr-dropdown__item">XL 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 스타일 변형 -->
+            <article>
+                <div class="article-header">
+                    <h2>스타일</h2>
+                    <p>드롭다운 스타일 변형</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-dropdown gr-dropdown--primary" data-title="Primary 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Primary 1</div>
+                                <div class="gr-dropdown__item">Primary 2</div>
+                                <div class="gr-dropdown__item">Primary 3</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown gr-dropdown--success" data-title="Success 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Success 1</div>
+                                <div class="gr-dropdown__item">Success 2</div>
+                                <div class="gr-dropdown__item">Success 3</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown gr-dropdown--danger" data-title="Danger 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">Danger 1</div>
+                                <div class="gr-dropdown__item">Danger 2</div>
+                                <div class="gr-dropdown__item">Danger 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 기능 예제 -->
+            <article>
+                <div class="article-header">
+                    <h2>기능</h2>
+                    <p>드롭다운 기능 예제</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-dropdown" data-title="선택 가능한 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item" data-value="option1">옵션 1</div>
+                                <div class="gr-dropdown__item" data-value="option2">옵션 2</div>
+                                <div class="gr-dropdown__item" data-value="option3">옵션 3</div>
+                                <div class="gr-dropdown__item" data-value="option4">옵션 4</div>
+                            </div>
+                        </div>
+
+                        <div class="gr-dropdown" data-title="긴 목록 드롭다운">
+                            <div class="gr-dropdown__header">
+                                <span class="gr-dropdown__header-arrow"></span>
+                            </div>
+                            <div class="gr-dropdown__body">
+                                <div class="gr-dropdown__item">첫 번째 옵션</div>
+                                <div class="gr-dropdown__item">두 번째 옵션</div>
+                                <div class="gr-dropdown__item">세 번째 옵션</div>
+                                <div class="gr-dropdown__item">네 번째 옵션</div>
+                                <div class="gr-dropdown__item">다섯 번째 옵션</div>
+                                <div class="gr-dropdown__item">여섯 번째 옵션</div>
+                                <div class="gr-dropdown__item">일곱 번째 옵션</div>
+                                <div class="gr-dropdown__item">여덟 번째 옵션</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+
+    <script src="../assets/demo.js"></script>
+    <script>
+        // Dropdown functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdowns = document.querySelectorAll('.gr-dropdown');
+
+            dropdowns.forEach(dropdown => {
+                const header = dropdown.querySelector('.gr-dropdown__header');
+                const body = dropdown.querySelector('.gr-dropdown__body');
+                const arrow = dropdown.querySelector('.gr-dropdown__header-arrow');
+                const items = dropdown.querySelectorAll('.gr-dropdown__item');
+
+                // Toggle dropdown
+                header.addEventListener('click', function () {
+                    const isOpen = body.classList.contains('gr-dropdown__body--open');
+
+                    if (isOpen) {
+                        body.classList.remove('gr-dropdown__body--open');
+                        arrow.classList.remove('gr-dropdown__header-arrow--open');
+                    } else {
+                        body.classList.add('gr-dropdown__body--open');
+                        arrow.classList.add('gr-dropdown__header-arrow--open');
+                    }
+                });
+
+                // Handle item selection
+                items.forEach(item => {
+                    item.addEventListener('click', function () {
+                        // Remove active class from all items
+                        items.forEach(i => i.classList.remove('gr-dropdown__item--active'));
+
+                        // Add active class to clicked item
+                        this.classList.add('gr-dropdown__item--active');
+
+                        // Close dropdown
+                        body.classList.remove('gr-dropdown__body--open');
+                        arrow.classList.remove('gr-dropdown__header-arrow--open');
+
+                        // Optional: Update header text or trigger custom event
+                        console.log('Selected:', this.textContent);
+                    });
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function (event) {
+                    if (!dropdown.contains(event.target)) {
+                        body.classList.remove('gr-dropdown__body--open');
+                        arrow.classList.remove('gr-dropdown__header-arrow--open');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
