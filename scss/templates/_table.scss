@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Table Template
+   ========================================================================== */
+
+.gr-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+
+  &__header {
+    background-color: $color-gray-50;
+  }
+
+  &__row {
+    border-bottom: $border-width-thin solid $color-gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+  }
+
+  &__cell {
+    padding: $spacing-md $spacing-lg;
+    text-align: left;
+    vertical-align: middle;
+
+    &--header {
+      font-weight: $font-weight-semibold;
+      color: $color-gray-900;
+      background-color: $color-gray-50;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  /* Variants */
+  &--striped {
+    .gr-table__row:nth-child(even) {
+      background-color: $color-gray-50;
+    }
+  }
+
+  &--bordered {
+    border: $border-width-thin solid $color-gray-200;
+
+    .gr-table__cell {
+      border-right: $border-width-thin solid $color-gray-200;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  &--compact {
+    .gr-table__cell {
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+
+  &--large {
+    .gr-table__cell {
+      padding: $spacing-lg $spacing-xl;
+    }
+  }
+
+  /* Responsive */
+  &--responsive {
+    @include respond-to(sm) {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}

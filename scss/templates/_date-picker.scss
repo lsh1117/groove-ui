@@ -1,0 +1,156 @@
+/* ==========================================================================
+   Date Picker Template
+   ========================================================================== */
+
+.gr-date-picker {
+  position: relative;
+  display: inline-block;
+
+  &__input {
+    @include form-element-base;
+    padding-right: 3rem;
+    cursor: pointer;
+  }
+
+  &__icon {
+    position: absolute;
+    right: $spacing-sm;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-gray-400;
+    pointer-events: none;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: z-index(dropdown);
+    background-color: $color-white;
+    border: $border-width-thin solid $color-gray-300;
+    border-radius: $border-radius-md;
+    box-shadow: $shadow-lg;
+    padding: $spacing-md;
+    min-width: 28rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity $transition-normal, visibility $transition-normal, transform $transition-normal;
+
+    &.is-show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+
+  &__nav {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  &__nav-btn {
+    @include button-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    color: $color-gray-600;
+    border-radius: $border-radius-sm;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
+
+  &__calendar {
+    width: 100%;
+  }
+
+  &__weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: $spacing-xs;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__weekday {
+    text-align: center;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-gray-600;
+    padding: $spacing-xs;
+  }
+
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: $spacing-xs;
+  }
+
+  &__day {
+    @include button-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: $font-size-sm;
+    color: $color-gray-700;
+    border-radius: $border-radius-sm;
+    transition: all $transition-normal;
+
+    &:hover {
+      background-color: $color-gray-100;
+    }
+
+    &.is-selected {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+
+    &.is-today {
+      font-weight: $font-weight-semibold;
+      color: $color-primary;
+    }
+
+    &.is-other-month {
+      color: $color-gray-400;
+    }
+
+    &.is-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $spacing-md;
+    padding-top: $spacing-md;
+    border-top: $border-width-thin solid $color-gray-200;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+  }
+}

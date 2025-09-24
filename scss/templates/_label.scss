@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Label Template
+   ========================================================================== */
+
+.gr-label {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  line-height: 1;
+  border-radius: $border-radius-sm;
+  background-color: $color-gray-100;
+  color: $color-gray-700;
+
+  /* Variants */
+  &--primary {
+    background-color: rgba($color-primary, 0.1);
+    color: $color-primary;
+  }
+
+  &--secondary {
+    background-color: rgba($color-secondary, 0.1);
+    color: $color-secondary;
+  }
+
+  &--success {
+    background-color: rgba($color-success, 0.1);
+    color: $color-success;
+  }
+
+  &--danger {
+    background-color: rgba($color-danger, 0.1);
+    color: $color-danger;
+  }
+
+  &--warning {
+    background-color: rgba($color-warning, 0.1);
+    color: $color-warning;
+  }
+
+  &--info {
+    background-color: rgba($color-info, 0.1);
+    color: $color-info;
+  }
+
+  &--light {
+    background-color: $color-gray-200;
+    color: $color-gray-800;
+  }
+
+  &--dark {
+    background-color: $color-gray-800;
+    color: $color-gray-200;
+  }
+
+  /* Sizes */
+  &--sm {
+    padding: 0.2rem $spacing-xs;
+    font-size: 1.1rem;
+  }
+
+  &--lg {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-base;
+  }
+
+  /* Outline variant */
+  &--outline {
+    background-color: transparent;
+    border: $border-width-thin solid currentColor;
+
+    &.gr-label--primary {
+      color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &.gr-label--secondary {
+      color: $color-secondary;
+      border-color: $color-secondary;
+    }
+
+    &.gr-label--success {
+      color: $color-success;
+      border-color: $color-success;
+    }
+
+    &.gr-label--danger {
+      color: $color-danger;
+      border-color: $color-danger;
+    }
+
+    &.gr-label--warning {
+      color: $color-warning;
+      border-color: $color-warning;
+    }
+
+    &.gr-label--info {
+      color: $color-info;
+      border-color: $color-info;
+    }
+  }
+}

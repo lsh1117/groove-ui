@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Date Picker - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+    </style>
+    <script>
+        function toggleDP() {
+            document.querySelector('.gr-date-picker__dropdown').classList.toggle('is-show');
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Date Picker</h1>
+            <p>날짜 선택기 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 날짜 선택기 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 날짜 선택기</p>
+                </div>
+                <div class="article-body">
+                    <div class="gr-date-picker">
+                        <input class="gr-date-picker__input" placeholder="YYYY-MM-DD" onclick="toggleDP()" />
+                        <span class="gr-date-picker__icon">📅</span>
+                        <div class="gr-date-picker__dropdown">
+                            <div class="gr-date-picker__header">
+                                <div class="gr-date-picker__title">2025-09</div>
+                                <div class="gr-date-picker__nav">
+                                    <button class="gr-date-picker__nav-btn" aria-label="prev">‹</button>
+                                    <button class="gr-date-picker__nav-btn" aria-label="next">›</button>
+                                </div>
+                            </div>
+                            <div class="gr-date-picker__calendar">
+                                <div class="gr-date-picker__weekdays">
+                                    <div class="gr-date-picker__weekday">Su</div>
+                                    <div class="gr-date-picker__weekday">Mo</div>
+                                    <div class="gr-date-picker__weekday">Tu</div>
+                                    <div class="gr-date-picker__weekday">We</div>
+                                    <div class="gr-date-picker__weekday">Th</div>
+                                    <div class="gr-date-picker__weekday">Fr</div>
+                                    <div class="gr-date-picker__weekday">Sa</div>
+                                </div>
+                                <div class="gr-date-picker__days">
+                                    <button class="gr-date-picker__day is-other-month">30</button>
+                                    <button class="gr-date-picker__day is-other-month">31</button>
+                                    <button class="gr-date-picker__day">1</button>
+                                    <button class="gr-date-picker__day is-today">2</button>
+                                    <button class="gr-date-picker__day is-selected">3</button>
+                                    <button class="gr-date-picker__day">4</button>
+                                    <button class="gr-date-picker__day">5</button>
+                                </div>
+                            </div>
+                            <div class="gr-date-picker__footer">
+                                <span class="gr-date-picker__info">날짜를 선택하세요</span>
+                                <div class="gr-date-picker__actions">
+                                    <button class="gr-btn gr-btn--secondary" onclick="toggleDP()">닫기</button>
+                                    <button class="gr-btn gr-btn--primary" onclick="toggleDP()">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

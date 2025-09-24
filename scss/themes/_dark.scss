@@ -1,0 +1,184 @@
+/* ==========================================================================
+   Dark Theme
+   ========================================================================== */
+
+[data-theme="dark"] {
+  // Colors
+  --color-primary: #3b82f6;
+  --color-secondary: #64748b;
+  --color-success: #10b981;
+  --color-danger: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #06b6d4;
+  --color-light: #1f2937;
+  --color-dark: #f9fafb;
+
+  // Neutral colors
+  --color-white: #111827;
+  --color-black: #f9fafb;
+  --color-gray-50: #1f2937;
+  --color-gray-100: #374151;
+  --color-gray-200: #4b5563;
+  --color-gray-300: #6b7280;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #d1d5db;
+  --color-gray-600: #e5e7eb;
+  --color-gray-700: #f3f4f6;
+  --color-gray-800: #f9fafb;
+  --color-gray-900: #ffffff;
+
+  // Background colors
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+
+  // Text colors
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+
+  // Border colors
+  --border-primary: #374151;
+  --border-secondary: #4b5563;
+
+  // Shadow colors
+  --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  // Button adjustments
+  .gr-btn {
+    &--primary {
+      background-color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    &--secondary {
+      background-color: var(--bg-secondary);
+      color: var(--text-primary);
+      border-color: var(--border-primary);
+    }
+
+    &--light {
+      background-color: var(--bg-tertiary);
+      color: var(--text-primary);
+      border-color: var(--border-primary);
+    }
+  }
+
+  // Input adjustments
+  .gr-input,
+  .gr-textarea,
+  .gr-select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-primary);
+
+    &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    &::placeholder {
+      color: var(--text-tertiary);
+    }
+  }
+
+  // Card adjustments
+  .gr-card {
+    background-color: var(--bg-secondary);
+    border-color: var(--border-primary);
+
+    &__header {
+      background-color: var(--bg-secondary);
+      border-bottom-color: var(--border-primary);
+    }
+
+    &__footer {
+      background-color: var(--bg-tertiary);
+      border-top-color: var(--border-primary);
+    }
+  }
+
+  // Modal adjustments
+  .gr-modal {
+    &__content {
+      background-color: var(--bg-secondary);
+      border-color: var(--border-primary);
+    }
+
+    &__header {
+      border-bottom-color: var(--border-primary);
+    }
+
+    &__footer {
+      border-top-color: var(--border-primary);
+    }
+
+    &__backdrop {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  // Header adjustments
+  .gr-header {
+    background-color: var(--bg-secondary);
+    border-bottom-color: var(--border-primary);
+  }
+
+  // Footer adjustments
+  .gr-footer {
+    background-color: var(--bg-tertiary);
+
+    &--light {
+      background-color: var(--bg-tertiary);
+      color: var(--text-secondary);
+    }
+  }
+
+  // Typography adjustments
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+  }
+
+  p {
+    color: var(--text-secondary);
+  }
+
+  a {
+    color: var(--color-primary);
+
+    &:hover {
+      /* Avoid Sass color functions on CSS variables; use same color or opacity-based styles */
+      color: var(--color-primary);
+    }
+  }
+
+  // Code adjustments
+  code, kbd, samp {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  pre {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+  }
+
+  // Blockquote adjustments
+  blockquote {
+    background-color: var(--bg-tertiary);
+    border-left-color: var(--color-primary);
+  }
+
+  // Selection adjustments
+  ::selection {
+    background-color: rgba(59, 130, 246, 0.3);
+    color: var(--text-primary);
+  }
+}

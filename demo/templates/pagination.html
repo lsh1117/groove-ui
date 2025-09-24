@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pagination - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Pagination</h1>
+            <p>페이지네이션의 스타일 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 페이지네이션 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 페이지네이션</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <ul class="gr-pagination">
+                            <li class="gr-pagination__item gr-pagination__prev"><a class="gr-pagination__link"
+                                    href="#">Prev</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">1</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link is-active" href="#">2</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">3</a></li>
+                            <li class="gr-pagination__item gr-pagination__next"><a class="gr-pagination__link"
+                                    href="#">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Rounded 페이지네이션 -->
+            <article>
+                <div class="article-header">
+                    <h2>Rounded</h2>
+                    <p>Rounded 스타일 페이지네이션</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <ul class="gr-pagination gr-pagination--rounded" style="margin-top:16px">
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">1</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">2</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link is-active" href="#">3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outline 페이지네이션 -->
+            <article>
+                <div class="article-header">
+                    <h2>Outline</h2>
+                    <p>Outline 스타일 페이지네이션</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <ul class="gr-pagination gr-pagination--outline" style="margin-top:16px">
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">1</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link is-active" href="#">2</a></li>
+                            <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Layer - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+    </style>
+    <script>
+        function openLayer() {
+            document.querySelector('.gr-layer').classList.add('is-show');
+            document.querySelector('.gr-layer__backdrop').classList.add('is-show');
+            document.querySelector('.gr-layer__content').classList.add('is-show');
+            document.body.classList.add('is-modal-open');
+        }
+
+        function closeLayer() {
+            document.querySelector('.gr-layer').classList.remove('is-show');
+            document.querySelector('.gr-layer__backdrop').classList.remove('is-show');
+            document.querySelector('.gr-layer__content').classList.remove('is-show');
+            document.body.classList.remove('is-modal-open');
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Layer</h1>
+            <p>레이어 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 레이어 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 레이어</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--primary" onclick="openLayer()">Open Layer</button>
+                        <div class="gr-layer" role="dialog" aria-modal="true" aria-labelledby="layer-title"
+                            style="display:block">
+                            <div class="gr-layer__backdrop"></div>
+                            <div class="gr-layer__content">
+                                <div class="gr-modal__header">
+                                    <h2 id="layer-title" class="gr-modal__title">레이어 제목</h2>
+                                    <button class="gr-modal__close" aria-label="닫기" onclick="closeLayer()">✕</button>
+                                </div>
+                                <div class="gr-modal__body">
+                                    레이어 본문 내용입니다.
+                                </div>
+                                <div class="gr-modal__footer">
+                                    <button class="gr-btn gr-btn--secondary" onclick="closeLayer()">닫기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

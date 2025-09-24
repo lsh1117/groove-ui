@@ -1,0 +1,116 @@
+/* ==========================================================================
+   Pagination Template
+   ========================================================================== */
+
+.gr-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    height: 4rem;
+    padding: $spacing-sm $spacing-md;
+    color: $color-gray-600;
+    text-decoration: none;
+    border: $border-width-thin solid $color-gray-300;
+    border-radius: $border-radius-md;
+    transition: all $transition-normal;
+
+    &:hover {
+      background-color: $color-gray-50;
+      border-color: $color-gray-400;
+    }
+
+    &.is-active {
+      background-color: $color-primary;
+      color: $color-white;
+      border-color: $color-primary;
+    }
+
+    &.is-disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &__prev,
+  &__next {
+    .gr-pagination__link {
+      padding: $spacing-sm;
+    }
+  }
+
+  &__ellipsis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4rem;
+    height: 4rem;
+    color: $color-gray-400;
+  }
+
+  /* Variants */
+  &--sm {
+    .gr-pagination__link {
+      min-width: 3.2rem;
+      height: 3.2rem;
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-sm;
+    }
+
+    .gr-pagination__ellipsis {
+      min-width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+
+  &--lg {
+    .gr-pagination__link {
+      min-width: 4.8rem;
+      height: 4.8rem;
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-lg;
+    }
+
+    .gr-pagination__ellipsis {
+      min-width: 4.8rem;
+      height: 4.8rem;
+    }
+  }
+
+  &--rounded {
+    .gr-pagination__link {
+      border-radius: $border-radius-full;
+    }
+  }
+
+  &--outline {
+    .gr-pagination__link {
+      background-color: transparent;
+      border: $border-width-thin solid $color-gray-300;
+
+      &:hover {
+        background-color: $color-gray-50;
+      }
+
+      &.is-active {
+        background-color: transparent;
+        color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+  }
+}

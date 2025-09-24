@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Message - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .stack {
+            display: grid;
+            gap: 12px;
+            max-width: 720px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Message</h1>
+            <p>메시지 컴포넌트의 타입 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 메시지 타입 -->
+            <article>
+                <div class="article-header">
+                    <h2>타입</h2>
+                    <p>메시지 타입</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="stack">
+                            <div class="gr-message gr-message--info">
+                                <div class="gr-message__icon">ℹ</div>
+                                <div class="gr-message__content">
+                                    <div class="gr-message__title">안내</div>
+                                    <p class="gr-message__text">정보성 메시지 영역입니다.</p>
+                                </div>
+                                <button class="gr-message__close" aria-label="닫기">✕</button>
+                            </div>
+                            <div class="gr-message gr-message--success">
+                                <div class="gr-message__icon">✔</div>
+                                <div class="gr-message__content">
+                                    <div class="gr-message__title">성공</div>
+                                    <p class="gr-message__text">성공적으로 처리되었습니다.</p>
+                                </div>
+                            </div>
+                            <div class="gr-message gr-message--warning">
+                                <div class="gr-message__icon">!</div>
+                                <div class="gr-message__content">
+                                    <div class="gr-message__title">주의</div>
+                                    <p class="gr-message__text">확인이 필요한 항목이 있습니다.</p>
+                                </div>
+                            </div>
+                            <div class="gr-message gr-message--danger">
+                                <div class="gr-message__icon">⚠</div>
+                                <div class="gr-message__content">
+                                    <div class="gr-message__title">오류</div>
+                                    <p class="gr-message__text">오류가 발생했습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Button - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Button</h1>
+            <p>버튼의 스타일, 크기, 그룹, 아이콘 버튼 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- Fill 버튼 -->
+            <article>
+                <div class="article-header">
+                    <h2>Fill</h2>
+                    <p>bg 버튼</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--primary">Primary</button>
+                        <button class="gr-btn gr-btn--secondary">Secondary</button>
+                        <button class="gr-btn gr-btn--success">Success</button>
+                        <button class="gr-btn gr-btn--danger">Danger</button>
+                        <button class="gr-btn gr-btn--warning">Warning</button>
+                        <button class="gr-btn gr-btn--info">Info</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Outline 버튼 -->
+            <article>
+                <div class="article-header">
+                    <h2>outline</h2>
+                    <p>outline 버튼</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--outline">Outline</button>
+                        <button class="gr-btn gr-btn--outline-primary">Outline Primary</button>
+                        <button class="gr-btn gr-btn--outline-secondary">Outline Secondary</button>
+                        <button class="gr-btn gr-btn--outline-success">Outline Success</button>
+                        <button class="gr-btn gr-btn--outline-danger">Outline Danger</button>
+                        <button class="gr-btn gr-btn--outline-warning">Outline Warning</button>
+                        <button class="gr-btn gr-btn--outline-info">Outline Info</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- etc 버튼 -->
+            <article>
+                <div class="article-header">
+                    <h2>etc</h2>
+                    <p>etc 버튼</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--light">Light</button>
+                        <button class="gr-btn gr-btn--dark">Dark</button>
+                        <button class="gr-btn gr-btn--link">Link</button>
+                        <button class="gr-btn gr-btn--ghost">Ghost</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 버튼 사이즈 -->
+            <article>
+                <div class="article-header">
+                    <h2>사이즈</h2>
+                    <p>버튼 사이즈</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--primary gr-btn--sm">Small</button>
+                        <button class="gr-btn gr-btn--primary">Medium</button>
+                        <button class="gr-btn gr-btn--primary gr-btn--lg">Large</button>
+                        <button class="gr-btn gr-btn--primary gr-btn--xl">XL</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 버튼 그룹 -->
+            <article>
+                <div class="article-header">
+                    <h2>버튼 그룹</h2>
+                    <p>버튼 그룹</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-btn-group">
+                            <button class="gr-btn gr-btn--secondary">Left</button>
+                            <button class="gr-btn gr-btn--secondary">Middle</button>
+                            <button class="gr-btn gr-btn--secondary">Right</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 아이콘 버튼 그룹 -->
+            <article>
+                <div class="article-header">
+                    <h2>아이콘 버튼</h2>
+                    <p>좌우측 아이콘 예제, 아이콘 버튼 예제</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--primary gr-btn--icon-left">
+                            <span class="gr-btn__icon">★</span>
+                            Like
+                        </button>
+                        <button class="gr-btn gr-btn--secondary gr-btn--icon-right">
+                            Next
+                            <span class="gr-btn__icon">→</span>
+                        </button>
+                        <button class="gr-btn gr-btn--icon gr-btn--primary" aria-label="Settings">⚙</button>
+                        <button class="gr-btn gr-btn--icon gr-btn--secondary" aria-label="Close">✕</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+
+
+
+
+
+
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

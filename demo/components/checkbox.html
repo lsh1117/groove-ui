@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Checkbox - Groove UI</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Checkbox</h1>
+            <p>체크박스의 스타일, 크기, 상태 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 체크박스 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 체크박스</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <label class="gr-checkbox">
+                            <input type="checkbox" checked />
+                            <span class="gr-checkbox__input"></span>
+                            <span class="gr-checkbox__label">체크 1</span>
+                        </label>
+                        <label class="gr-checkbox">
+                            <input type="checkbox" />
+                            <span class="gr-checkbox__input"></span>
+                            <span class="gr-checkbox__label">체크 2</span>
+                        </label>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 사이즈 -->
+            <article>
+                <div class="article-header">
+                    <h2>사이즈</h2>
+                    <p>체크박스 사이즈</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <label class="gr-checkbox gr-checkbox--sm">
+                            <input type="checkbox" checked />
+                            <span class="gr-checkbox__input"></span>
+                            <span class="gr-checkbox__label">Small</span>
+                        </label>
+                        <label class="gr-checkbox gr-checkbox--lg">
+                            <input type="checkbox" checked />
+                            <span class="gr-checkbox__input"></span>
+                            <span class="gr-checkbox__label">Large</span>
+                        </label>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

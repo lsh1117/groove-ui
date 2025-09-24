@@ -1,0 +1,75 @@
+/* ==========================================================================
+   List Template
+   ========================================================================== */
+
+.gr-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    transition: background-color $transition-normal;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+
+    &.is-active {
+      background-color: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+  }
+
+  &__action {
+    margin-left: $spacing-sm;
+  }
+
+  /* Variants */
+  &--bordered {
+    border: $border-width-thin solid $color-gray-200;
+    border-radius: $border-radius-md;
+    overflow: hidden;
+
+    .gr-list__item {
+      border-bottom: $border-width-thin solid $color-gray-200;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &--striped {
+    .gr-list__item:nth-child(even) {
+      background-color: $color-gray-50;
+    }
+  }
+
+  &--hoverable {
+    .gr-list__item {
+      cursor: pointer;
+    }
+  }
+}

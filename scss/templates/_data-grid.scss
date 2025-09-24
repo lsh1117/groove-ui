@@ -1,0 +1,119 @@
+/* ==========================================================================
+   Data Grid Template
+   ========================================================================== */
+
+.gr-data-grid {
+  background-color: $color-white;
+  border: $border-width-thin solid $color-gray-200;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+
+  &__header {
+    background-color: $color-gray-50;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  &__body {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__row {
+    border-bottom: $border-width-thin solid $color-gray-200;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+
+    &.is-selected {
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
+
+  &__cell {
+    padding: $spacing-md $spacing-lg;
+    text-align: left;
+    vertical-align: middle;
+
+    &--header {
+      font-weight: $font-weight-semibold;
+      color: $color-gray-900;
+      background-color: $color-gray-50;
+      border-bottom: $border-width-thin solid $color-gray-200;
+    }
+
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+
+    &--numeric {
+      text-align: right;
+      font-family: $font-family-mono;
+    }
+  }
+
+  &__footer {
+    background-color: $color-gray-50;
+    padding: $spacing-md $spacing-lg;
+    border-top: $border-width-thin solid $color-gray-200;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__info {
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+  }
+
+  /* Variants */
+  &--striped {
+    .gr-data-grid__row:nth-child(even) {
+      background-color: $color-gray-50;
+    }
+  }
+
+  &--compact {
+    .gr-data-grid__cell {
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+
+  &--large {
+    .gr-data-grid__cell {
+      padding: $spacing-lg $spacing-xl;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Data Grid - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px;
+            max-width: 1024px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Data Grid</h1>
+            <p>데이터 그리드 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 데이터 그리드 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 데이터 그리드</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-data-grid">
+                            <div class="gr-data-grid__header">
+                                <div class="gr-data-grid__title">사용자 목록</div>
+                                <div class="gr-data-grid__actions">
+                                    <button class="gr-btn gr-btn--secondary">새로고침</button>
+                                    <button class="gr-btn gr-btn--primary">추가</button>
+                                </div>
+                            </div>
+                            <div class="gr-data-grid__body">
+                                <table class="gr-data-grid__table">
+                                    <thead>
+                                        <tr class="gr-data-grid__row">
+                                            <th class="gr-data-grid__cell gr-data-grid__cell--header">NO</th>
+                                            <th class="gr-data-grid__cell gr-data-grid__cell--header">이름</th>
+                                            <th class="gr-data-grid__cell gr-data-grid__cell--header">부서</th>
+                                            <th
+                                                class="gr-data-grid__cell gr-data-grid__cell--header gr-data-grid__cell--right">
+                                                접속 수</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gr-data-grid__row is-selected">
+                                            <td class="gr-data-grid__cell">1</td>
+                                            <td class="gr-data-grid__cell">김민수</td>
+                                            <td class="gr-data-grid__cell">Data</td>
+                                            <td
+                                                class="gr-data-grid__cell gr-data-grid__cell--right gr-data-grid__cell--numeric">
+                                                12</td>
+                                        </tr>
+                                        <tr class="gr-data-grid__row">
+                                            <td class="gr-data-grid__cell">2</td>
+                                            <td class="gr-data-grid__cell">정수연</td>
+                                            <td class="gr-data-grid__cell">플랫폼</td>
+                                            <td
+                                                class="gr-data-grid__cell gr-data-grid__cell--right gr-data-grid__cell--numeric">
+                                                5</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="gr-data-grid__footer">
+                                <div class="gr-data-grid__info">총 2건</div>
+                                <ul class="gr-pagination">
+                                    <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">1</a></li>
+                                    <li class="gr-pagination__item"><a class="gr-pagination__link is-active"
+                                            href="#">2</a>
+                                    </li>
+                                    <li class="gr-pagination__item"><a class="gr-pagination__link" href="#">3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

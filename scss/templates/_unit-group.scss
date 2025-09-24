@@ -1,0 +1,153 @@
+/* ==========================================================================
+   Unit Group Template
+   ========================================================================== */
+
+.gr-unit-group {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+
+  &__item {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;
+
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+  }
+
+  &__input {
+    @include form-element-base;
+    position: relative;
+    z-index: 1;
+
+    &:focus {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__button {
+    @include button-base;
+    border: $border-width-thin solid $color-gray-300;
+    background-color: $color-white;
+    color: $color-gray-700;
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+
+    &:focus {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__select {
+    @include form-element-base;
+    border: $border-width-thin solid $color-gray-300;
+    background-color: $color-white;
+    color: $color-gray-700;
+
+    &:focus {
+      z-index: 2;
+    }
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-gray-100;
+    border: $border-width-thin solid $color-gray-300;
+    color: $color-gray-700;
+    font-size: $font-size-sm;
+    white-space: nowrap;
+
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  /* Sizes */
+  &--sm {
+    .gr-unit-group__input,
+    .gr-unit-group__button,
+    .gr-unit-group__select,
+    .gr-unit-group__text {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--lg {
+    .gr-unit-group__input,
+    .gr-unit-group__button,
+    .gr-unit-group__select,
+    .gr-unit-group__text {
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-lg;
+    }
+  }
+
+  /* Variants */
+  &--outline {
+    .gr-unit-group__input,
+    .gr-unit-group__button,
+    .gr-unit-group__select,
+    .gr-unit-group__text {
+      background-color: transparent;
+      border-color: $color-gray-300;
+    }
+  }
+
+  &--filled {
+    .gr-unit-group__input,
+    .gr-unit-group__button,
+    .gr-unit-group__select,
+    .gr-unit-group__text {
+      background-color: $color-gray-100;
+      border-color: transparent;
+    }
+  }
+}

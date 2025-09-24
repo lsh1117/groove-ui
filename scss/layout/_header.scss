@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Header Layout
+   ========================================================================== */
+
+.gr-header {
+  background-color: $color-white;
+  border-bottom: $border-width-thin solid $color-gray-200;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: z-index(sticky);
+
+  &__container {
+    @include container;
+    @include flex-between;
+    min-height: 6rem;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $color-gray-900;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__logo {
+    height: 3.2rem;
+    width: auto;
+    margin-right: $spacing-sm;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+
+    @include respond-to(md) {
+      gap: $spacing-xl;
+    }
+  }
+
+  &__link {
+    color: $color-gray-600;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius-md;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+
+    &.is-active {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+
+  &__toggle {
+    @include button-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    color: $color-gray-600;
+    border-radius: $border-radius-md;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+
+  /* Mobile menu */
+  &__mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: $color-white;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    box-shadow: $shadow-md;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform $transition-normal, opacity $transition-normal, visibility $transition-normal;
+
+    &.is-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @include respond-to(md) {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      box-shadow: none;
+      border-bottom: none;
+      background-color: transparent;
+    }
+  }
+
+  &__mobile-nav {
+    padding: $spacing-md;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      padding: 0;
+      gap: $spacing-lg;
+    }
+  }
+
+  &__mobile-link {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    color: $color-gray-600;
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-md;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+
+    &.is-active {
+      color: $color-primary;
+      background-color: rgba($color-primary, 0.1);
+    }
+  }
+}

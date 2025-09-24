@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Card Template
+   ========================================================================== */
+
+.gr-card {
+  @include card;
+  display: flex;
+  flex-direction: column;
+
+  /* Card header */
+  &__header {
+    padding: $spacing-lg;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    background-color: $color-white;
+
+    &--highlight {
+      background-color: $color-gray-50;
+    }
+  }
+
+  /* Card body */
+  &__body {
+    padding: $spacing-lg;
+    flex: 1 1 auto;
+  }
+
+  /* Card footer */
+  &__footer {
+    padding: $spacing-lg;
+    border-top: $border-width-thin solid $color-gray-200;
+    background-color: $color-gray-50;
+  }
+
+  /* Card title */
+  &__title {
+    margin: 0 0 $spacing-sm 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+
+  /* Card subtitle */
+  &__subtitle {
+    margin: 0 0 $spacing-md 0;
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+  }
+
+  /* Card text */
+  &__text {
+    margin: 0 0 $spacing-md 0;
+    color: $color-gray-700;
+    line-height: $line-height-normal;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Card image */
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    &-top {
+      border-top-left-radius: $border-radius-lg;
+      border-top-right-radius: $border-radius-lg;
+    }
+
+    &-bottom {
+      border-bottom-left-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+    }
+  }
+
+  /* Card variants */
+  &--outline {
+    background-color: transparent;
+    border: $border-width-thin solid $color-gray-300;
+    box-shadow: none;
+  }
+
+  &--elevated {
+    box-shadow: $shadow-lg;
+  }
+
+  &--flat {
+    box-shadow: none;
+    border: none;
+  }
+
+  /* Card sizes */
+  &--sm {
+    .gr-card__header,
+    .gr-card__body,
+    .gr-card__footer {
+      padding: $spacing-md;
+    }
+  }
+
+  &--lg {
+    .gr-card__header,
+    .gr-card__body,
+    .gr-card__footer {
+      padding: $spacing-xl;
+    }
+  }
+
+  /* Card states */
+  &.is-hoverable {
+    transition: transform $transition-normal, box-shadow $transition-normal;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &.is-selected {
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.1);
+  }
+
+  &.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+/* Card group */
+.gr-card-group {
+  display: flex;
+  flex-direction: column;
+
+  .gr-card {
+    border-radius: 0;
+    border-right-width: 0;
+
+    &:first-child {
+      border-top-left-radius: $border-radius-lg;
+      border-top-right-radius: $border-radius-lg;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+      border-right-width: $border-width-thin;
+    }
+
+    &:not(:first-child) {
+      border-top-width: 0;
+    }
+  }
+
+  @include respond-to(sm) {
+    flex-direction: row;
+
+    .gr-card {
+      border-top-width: $border-width-thin;
+      border-bottom-width: $border-width-thin;
+
+      &:first-child {
+        border-top-left-radius: $border-radius-lg;
+        border-bottom-left-radius: $border-radius-lg;
+        border-top-right-radius: 0;
+      }
+
+      &:last-child {
+        border-top-right-radius: $border-radius-lg;
+        border-bottom-right-radius: $border-radius-lg;
+        border-bottom-left-radius: 0;
+      }
+
+      &:not(:first-child) {
+        border-left-width: 0;
+      }
+    }
+  }
+}
+
+/* Card deck */
+.gr-card-deck {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  @include respond-to(sm) {
+    flex-direction: row;
+  }
+
+  .gr-card {
+    flex: 1 1 0;
+  }
+}
+
+/* Card columns */
+.gr-card-columns {
+  column-count: 1;
+  column-gap: $spacing-lg;
+
+  @include respond-to(sm) {
+    column-count: 2;
+  }
+
+  @include respond-to(md) {
+    column-count: 3;
+  }
+
+  .gr-card {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: $spacing-lg;
+    break-inside: avoid;
+  }
+}

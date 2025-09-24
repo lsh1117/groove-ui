@@ -1,0 +1,19 @@
+{
+    "editor.tabSize": 4,    // 탭 크기
+    "editor.fontSize": 13,  // 폰트 사이즈
+    
+    /* liveSassCompile 설정 */
+    "liveSassCompile.settings.generateMap": false,  // scss 맵파일 생성 여부
+    "liveSassCompile.settings.formats":[
+        {
+            "format": "expanded",   // css 변환 스타일 nested(계층구조로 앞에 공백이 있음), expanded(계층 구조로 앞에 공백이 없음), compact(옵션값들 줄바꿈 하지 않음), compressed(불필요한 공백 모두 제거)
+            "extensionName": ".css",
+            "savePath": "/css"
+        },
+        {
+            "format": "expanded",   // css 변환 스타일 nested(계층구조로 앞에 공백이 있음), expanded(계층 구조로 앞에 공백이 없음), compact(옵션값들 줄바꿈 하지 않음), compressed(불필요한 공백 모두 제거)
+            "extensionName": ".css",
+            "savePath": "/dist/css"
+        }
+    ],
+}

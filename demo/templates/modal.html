@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Modal - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+    </style>
+    <script>
+        function openModal() {
+            document.querySelector('.gr-modal').classList.add('is-show');
+            document.querySelector('.gr-modal__backdrop').classList.add('is-show');
+            document.querySelector('.gr-modal__dialog').classList.add('is-show');
+            document.body.classList.add('is-modal-open');
+        }
+        function closeModal() {
+            document.querySelector('.gr-modal').classList.remove('is-show');
+            document.querySelector('.gr-modal__backdrop').classList.remove('is-show');
+            document.querySelector('.gr-modal__dialog').classList.remove('is-show');
+            document.body.classList.remove('is-modal-open');
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Modal</h1>
+            <p>모달 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 모달 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 모달</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <button class="gr-btn gr-btn--primary" onclick="openModal()">Open Modal</button>
+                        <div class="gr-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+                            style="display:none"></div>
+                        <div class="gr-modal is-show" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+                            style="display:block">
+                            <div class="gr-modal__backdrop"></div>
+                            <div class="gr-modal__dialog is-show">
+                                <div class="gr-modal__content">
+                                    <div class="gr-modal__header">
+                                        <h2 id="modal-title" class="gr-modal__title">모달 제목</h2>
+                                        <button class="gr-modal__close" aria-label="닫기"
+                                            onclick="closeModal()">✕</button>
+                                    </div>
+                                    <div class="gr-modal__body">
+                                        모달 본문 내용입니다.
+                                    </div>
+                                    <div class="gr-modal__footer">
+                                        <button class="gr-btn gr-btn--secondary" onclick="closeModal()">취소</button>
+                                        <button class="gr-btn gr-btn--primary" onclick="closeModal()">확인</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

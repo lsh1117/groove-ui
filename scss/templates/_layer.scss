@@ -1,0 +1,92 @@
+/* ==========================================================================
+   Layer Template
+   ========================================================================== */
+
+.gr-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z-index(modal);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z-index(modal-backdrop);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, 0.5);
+    opacity: 0;
+    transition: opacity $transition-normal;
+
+    &.is-show {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: $spacing-lg auto;
+    background-color: $color-white;
+    border: $border-width-thin solid $color-gray-300;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+    outline: 0;
+    transform: scale(0.9);
+    transition: transform $transition-normal;
+
+    &.is-show {
+      transform: scale(1);
+    }
+  }
+
+  /* Variants */
+  &--sm {
+    .gr-layer__content {
+      max-width: 300px;
+    }
+  }
+
+  &--lg {
+    .gr-layer__content {
+      max-width: 800px;
+    }
+  }
+
+  &--xl {
+    .gr-layer__content {
+      max-width: 1140px;
+    }
+  }
+
+  &--fullscreen {
+    .gr-layer__content {
+      max-width: none;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  /* States */
+  &.is-show {
+    display: block;
+  }
+
+  &.is-hiding {
+    .gr-layer__backdrop {
+      opacity: 0;
+    }
+
+    .gr-layer__content {
+      transform: scale(0.9);
+    }
+  }
+}

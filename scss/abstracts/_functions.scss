@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Functions
+   ========================================================================== */
+
+// Color manipulation
+// Use Sass built-ins lighten(), darken(), rgba() directly to avoid recursion
+
+// Spacing function
+@function spacing($multiplier: 1) {
+  @return $spacing-md * $multiplier;
+}
+
+// Font size function
+@function font-size($size) {
+  @if $size == xs { @return $font-size-xs; }
+  @if $size == sm { @return $font-size-sm; }
+  @if $size == base { @return $font-size-base; }
+  @if $size == lg { @return $font-size-lg; }
+  @if $size == xl { @return $font-size-xl; }
+  @if $size == 2xl { @return $font-size-2xl; }
+  @if $size == 3xl { @return $font-size-3xl; }
+  @if $size == 4xl { @return $font-size-4xl; }
+  @return $size;
+}
+
+// Z-index function
+@function z-index($layer) {
+  @if $layer == dropdown { @return $z-index-dropdown; }
+  @if $layer == sticky { @return $z-index-sticky; }
+  @if $layer == fixed { @return $z-index-fixed; }
+  @if $layer == modal-backdrop { @return $z-index-modal-backdrop; }
+  @if $layer == modal { @return $z-index-modal; }
+  @if $layer == popover { @return $z-index-popover; }
+  @if $layer == tooltip { @return $z-index-tooltip; }
+  @return $layer;
+}
+
+// Border radius function
+@function border-radius($size) {
+  @if $size == sm { @return $border-radius-sm; }
+  @if $size == md { @return $border-radius-md; }
+  @if $size == lg { @return $border-radius-lg; }
+  @if $size == xl { @return $border-radius-xl; }
+  @if $size == full { @return $border-radius-full; }
+  @return $size;
+}
+
+// Shadow function
+@function shadow($size) {
+  @if $size == sm { @return $shadow-sm; }
+  @if $size == md { @return $shadow-md; }
+  @if $size == lg { @return $shadow-lg; }
+  @if $size == xl { @return $shadow-xl; }
+  @return $size;
+}
+
+// Color function
+@function color($name, $variant: base) {
+  @if $name == primary {
+    @if $variant == light { @return lighten($color-primary, 20%); }
+    @if $variant == dark { @return darken($color-primary, 20%); }
+    @return $color-primary;
+  }
+  @if $name == secondary {
+    @if $variant == light { @return lighten($color-secondary, 20%); }
+    @if $variant == dark { @return darken($color-secondary, 20%); }
+    @return $color-secondary;
+  }
+  @if $name == success { @return $color-success; }
+  @if $name == danger { @return $color-danger; }
+  @if $name == warning { @return $color-warning; }
+  @if $name == info { @return $color-info; }
+  @if $name == light { @return $color-light; }
+  @if $name == dark { @return $color-dark; }
+  @if $name == white { @return $color-white; }
+  @if $name == black { @return $color-black; }
+  @return $name;
+}
+
+// Rem conversion function
+@function rem($pixels) {
+  @return ($pixels / 10) * 1rem;
+}
+
+// Em conversion function
+@function em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}

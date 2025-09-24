@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Modal Template
+   ========================================================================== */
+
+.gr-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: z-index(modal);
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+
+  /* Modal backdrop */
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: z-index(modal-backdrop);
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-black, 0.5);
+    opacity: 0;
+    transition: opacity $transition-normal;
+
+    &.is-show {
+      opacity: 1;
+    }
+  }
+
+  /* Modal dialog */
+  &__dialog {
+    position: relative;
+    width: auto;
+    margin: $spacing-lg;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: transform $transition-normal;
+
+    &.is-show {
+      transform: scale(1);
+    }
+  }
+
+  /* Modal content */
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: $color-white;
+    border: $border-width-thin solid $color-gray-300;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-xl;
+    pointer-events: auto;
+    outline: 0;
+  }
+
+  /* Modal header */
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-lg;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+  }
+
+  /* Modal title */
+  &__title {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+
+  /* Modal close button */
+  &__close {
+    @include button-reset;
+    padding: $spacing-xs;
+    color: $color-gray-400;
+    font-size: $font-size-xl;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: $border-radius-sm;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-gray-600;
+      background-color: $color-gray-100;
+    }
+
+    &:focus {
+      @include focus-ring;
+    }
+  }
+
+  /* Modal body */
+  &__body {
+    position: relative;
+    flex: 1 1 auto;
+    padding: $spacing-lg;
+  }
+
+  /* Modal footer */
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $spacing-sm;
+    padding: $spacing-lg;
+    border-top: $border-width-thin solid $color-gray-200;
+    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-right-radius: $border-radius-lg;
+  }
+
+  /* Modal sizes */
+  &--sm {
+    .gr-modal__content {
+      max-width: 300px;
+    }
+  }
+
+  &--lg {
+    .gr-modal__content {
+      max-width: 800px;
+    }
+  }
+
+  &--xl {
+    .gr-modal__content {
+      max-width: 1140px;
+    }
+  }
+
+  &--fullscreen {
+    .gr-modal__dialog {
+      margin: 0;
+      max-width: none;
+      height: 100%;
+    }
+
+    .gr-modal__content {
+      max-width: none;
+      height: 100%;
+      border-radius: 0;
+    }
+  }
+
+  /* Modal states */
+  &.is-show {
+    display: block;
+  }
+
+  &.is-hiding {
+    .gr-modal__backdrop {
+      opacity: 0;
+    }
+
+    .gr-modal__dialog {
+      transform: scale(0.9);
+    }
+  }
+}
+
+/* Modal animations */
+.gr-modal {
+  &.is-show {
+    @include fade-in;
+  }
+
+  .gr-modal__dialog {
+    &.is-show {
+      @include slide-up;
+    }
+  }
+}
+
+/* Centered modal */
+.gr-modal--centered {
+  .gr-modal__dialog {
+    display: flex;
+    align-items: center;
+    min-height: calc(100% - #{$spacing-lg * 2});
+  }
+}
+
+/* Scrollable modal */
+.gr-modal--scrollable {
+  .gr-modal__dialog {
+    max-height: calc(100% - #{$spacing-lg * 2});
+  }
+
+  .gr-modal__content {
+    max-height: 100%;
+    overflow: hidden;
+  }
+
+  .gr-modal__body {
+    overflow-y: auto;
+  }
+}
+
+/* Static backdrop */
+.gr-modal--static {
+  .gr-modal__backdrop {
+    position: static;
+  }
+}
+
+/* Body scroll lock */
+body.is-modal-open {
+  overflow: hidden;
+}

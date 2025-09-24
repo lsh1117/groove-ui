@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Search - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <script>
+        function toggleDropdown() {
+            document.querySelector('.gr-search__dropdown').classList.toggle('is-show');
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Search</h1>
+            <p>검색 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 검색 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 검색</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-search">
+                            <input class="gr-search__input" type="search" placeholder="검색어 입력"
+                                onfocus="toggleDropdown()" />
+                            <span class="gr-search__icon">🔍</span>
+                            <button class="gr-search__clear" aria-label="지우기">✕</button>
+                            <div class="gr-search__dropdown">
+                                <ul class="gr-search__results">
+                                    <li><a href="#" class="gr-search__result">
+                                            <div class="gr-search__result-title">Result A</div>
+                                            <div class="gr-search__result-description">설명 텍스트</div>
+                                        </a></li>
+                                    <li><a href="#" class="gr-search__result is-highlighted">
+                                            <div class="gr-search__result-title">Result B</div>
+                                            <div class="gr-search__result-description">설명 텍스트</div>
+                                        </a></li>
+                                    <li><a href="#" class="gr-search__result">
+                                            <div class="gr-search__result-title">Result C</div>
+                                            <div class="gr-search__result-description">설명 텍스트</div>
+                                        </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

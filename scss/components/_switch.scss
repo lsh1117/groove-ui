@@ -1,0 +1,105 @@
+/* ==========================================================================
+   Switch Component
+   ========================================================================== */
+
+.gr-switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  input[type="checkbox"] {
+    @include visually-hidden;
+  }
+
+  &__input {
+    position: relative;
+    display: inline-block;
+    width: 4.4rem;
+    height: 2.4rem;
+    background-color: $color-gray-300;
+    border-radius: 1.2rem;
+    transition: background-color $transition-normal;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0.2rem;
+      left: 0.2rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: $color-white;
+      border-radius: 50%;
+      transition: transform $transition-normal;
+      box-shadow: $shadow-sm;
+    }
+  }
+
+  &__label {
+    margin-left: $spacing-sm;
+    font-size: $font-size-base;
+    color: $color-gray-700;
+    cursor: pointer;
+  }
+
+  /* States */
+  input[type="checkbox"]:checked + .gr-switch__input {
+    background-color: $color-primary;
+
+    &::after {
+      transform: translateX(2rem);
+    }
+  }
+
+  input[type="checkbox"]:focus + .gr-switch__input {
+    @include focus-ring;
+  }
+
+  input[type="checkbox"]:disabled + .gr-switch__input {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  input[type="checkbox"]:disabled ~ .gr-switch__label {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Sizes */
+  &--sm {
+    .gr-switch__input {
+      width: 3.6rem;
+      height: 2rem;
+
+      &::after {
+        width: 1.6rem;
+        height: 1.6rem;
+        top: 0.2rem;
+        left: 0.2rem;
+      }
+    }
+
+    input[type="checkbox"]:checked + .gr-switch__input::after {
+      transform: translateX(1.6rem);
+    }
+  }
+
+  &--lg {
+    .gr-switch__input {
+      width: 5.2rem;
+      height: 2.8rem;
+
+      &::after {
+        width: 2.4rem;
+        height: 2.4rem;
+        top: 0.2rem;
+        left: 0.2rem;
+      }
+    }
+
+    input[type="checkbox"]:checked + .gr-switch__input::after {
+      transform: translateX(2.4rem);
+    }
+  }
+}

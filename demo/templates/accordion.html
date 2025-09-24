@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accordion - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px;
+            max-width: 720px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Accordion</h1>
+            <p>아코디언 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 아코디언 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 아코디언</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-accordion">
+                            <div class="gr-accordion__item">
+                                <button class="gr-accordion__header" aria-expanded="true">
+                                    <span class="gr-accordion__title">섹션 1</span>
+                                    <span class="gr-accordion__icon">⌄</span>
+                                </button>
+                                <div class="gr-accordion__content is-open">
+                                    <div class="gr-accordion__body">내용 1 입니다.</div>
+                                </div>
+                            </div>
+                            <div class="gr-accordion__item">
+                                <button class="gr-accordion__header" aria-expanded="false">
+                                    <span class="gr-accordion__title">섹션 2</span>
+                                    <span class="gr-accordion__icon">⌄</span>
+                                </button>
+                                <div class="gr-accordion__content">
+                                    <div class="gr-accordion__body">내용 2 입니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

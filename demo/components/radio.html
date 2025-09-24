@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Radio - Groove UI</title>
+    <link rel="stylesheet" href="../../css/style.css" />
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Radio</h1>
+            <p>라디오 버튼의 스타일, 크기 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 기본 라디오 -->
+            <article>
+                <div class="article-header">
+                    <h2>기본</h2>
+                    <p>기본 라디오 버튼</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <label class="gr-radio">
+                            <input type="radio" name="r1" checked />
+                            <span class="gr-radio__input"></span>
+                            <span class="gr-radio__label">옵션 1</span>
+                        </label>
+                        <label class="gr-radio">
+                            <input type="radio" name="r1" />
+                            <span class="gr-radio__input"></span>
+                            <span class="gr-radio__label">옵션 2</span>
+                        </label>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 사이즈 -->
+            <article>
+                <div class="article-header">
+                    <h2>사이즈</h2>
+                    <p>라디오 버튼 사이즈</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <label class="gr-radio gr-radio--sm">
+                            <input type="radio" name="r2" checked />
+                            <span class="gr-radio__input"></span>
+                            <span class="gr-radio__label">Small</span>
+                        </label>
+                        <label class="gr-radio gr-radio--lg">
+                            <input type="radio" name="r3" checked />
+                            <span class="gr-radio__input"></span>
+                            <span class="gr-radio__label">Large</span>
+                        </label>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

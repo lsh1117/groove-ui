@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Data List Template
+   ========================================================================== */
+
+.gr-data-list {
+  background-color: $color-white;
+  border: $border-width-thin solid $color-gray-200;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+
+  &__header {
+    background-color: $color-gray-50;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    font-weight: $font-weight-semibold;
+    color: $color-gray-900;
+  }
+
+  &__body {
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: $spacing-md $spacing-lg;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    transition: background-color $transition-normal;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+
+    &.is-selected {
+      background-color: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  &__avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: $color-gray-200;
+    @include flex-center;
+    font-weight: $font-weight-semibold;
+    color: $color-gray-600;
+  }
+
+  &__info {
+    flex: 1;
+  }
+
+  &__title {
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+  }
+
+  &__meta {
+    font-size: $font-size-sm;
+    color: $color-gray-500;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  /* Variants */
+  &--compact {
+    .gr-data-list__item {
+      padding: $spacing-sm $spacing-md;
+    }
+
+    .gr-data-list__avatar {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  &--large {
+    .gr-data-list__item {
+      padding: $spacing-lg $spacing-xl;
+    }
+
+    .gr-data-list__avatar {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}

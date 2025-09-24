@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tooltip - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .row {
+            display: flex;
+            gap: 24px;
+            align-items: center
+        }
+    </style>
+    <script>
+        function toggle(id) {
+            const el = document.getElementById(id);
+            el.classList.toggle('is-show');
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Tooltip</h1>
+            <p>툴팁의 위치 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 툴팁 위치 -->
+            <article>
+                <div class="article-header">
+                    <h2>위치</h2>
+                    <p>툴팁 위치</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="row">
+                            <div class="gr-tooltip gr-tooltip--top">
+                                <button class="gr-btn gr-btn--secondary" onclick="toggle('tip1')">Top</button>
+                                <div id="tip1" class="gr-tooltip__content">상단 툴팁</div>
+                            </div>
+                            <div class="gr-tooltip gr-tooltip--bottom">
+                                <button class="gr-btn gr-btn--secondary" onclick="toggle('tip2')">Bottom</button>
+                                <div id="tip2" class="gr-tooltip__content">하단 툴팁</div>
+                            </div>
+                            <div class="gr-tooltip gr-tooltip--left">
+                                <button class="gr-btn gr-btn--secondary" onclick="toggle('tip3')">Left</button>
+                                <div id="tip3" class="gr-tooltip__content">좌측 툴팁</div>
+                            </div>
+                            <div class="gr-tooltip gr-tooltip--right">
+                                <button class="gr-btn gr-btn--secondary" onclick="toggle('tip4')">Right</button>
+                                <div id="tip4" class="gr-tooltip__content">우측 툴팁</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

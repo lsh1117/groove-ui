@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Checkbox Component
+   ========================================================================== */
+
+.gr-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  input[type="checkbox"] {
+    @include visually-hidden;
+  }
+
+  &__input {
+    position: relative;
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: $border-width-thin solid $color-gray-300;
+    border-radius: $border-radius-sm;
+    background-color: $color-white;
+    transition: all $transition-normal;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.6rem;
+      height: 1rem;
+      border: solid $color-white;
+      border-width: 0 2px 2px 0;
+      transform: translate(-50%, -60%) rotate(45deg) scale(0);
+      transition: transform $transition-normal;
+    }
+  }
+
+  &__label {
+    margin-left: $spacing-sm;
+    font-size: $font-size-base;
+    color: $color-gray-700;
+    cursor: pointer;
+  }
+
+  /* States */
+  input[type="checkbox"]:checked + .gr-checkbox__input {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &::after {
+      transform: translate(-50%, -60%) rotate(45deg) scale(1);
+    }
+  }
+
+  input[type="checkbox"]:focus + .gr-checkbox__input {
+    @include focus-ring;
+  }
+
+  input[type="checkbox"]:disabled + .gr-checkbox__input {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  input[type="checkbox"]:disabled ~ .gr-checkbox__label {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* Indeterminate state */
+  input[type="checkbox"]:indeterminate + .gr-checkbox__input {
+    background-color: $color-primary;
+    border-color: $color-primary;
+
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 2px;
+      border: none;
+      background-color: $color-white;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+
+  /* Sizes */
+  &--sm {
+    .gr-checkbox__input {
+      width: 1.6rem;
+      height: 1.6rem;
+
+      &::after {
+        width: 0.4rem;
+        height: 0.8rem;
+      }
+    }
+
+    .gr-checkbox__label {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--lg {
+    .gr-checkbox__input {
+      width: 2.4rem;
+      height: 2.4rem;
+
+      &::after {
+        width: 0.8rem;
+        height: 1.2rem;
+      }
+    }
+
+    .gr-checkbox__label {
+      font-size: $font-size-lg;
+    }
+  }
+}

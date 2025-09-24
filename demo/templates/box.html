@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Box - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Box</h1>
+            <p>박스 컴포넌트의 스타일, 상태 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 박스 스타일 -->
+            <article>
+                <div class="article-header">
+                    <h2>스타일</h2>
+                    <p>박스 스타일</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="grid">
+                            <div class="gr-box">기본 박스</div>
+                            <div class="gr-box gr-box--outline">Outline</div>
+                            <div class="gr-box gr-box--filled">Filled</div>
+                            <div class="gr-box gr-box--elevated">Elevated</div>
+                            <div class="gr-box gr-box--flat">Flat (no padding)</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 박스 상태 -->
+            <article>
+                <div class="article-header">
+                    <h2>상태</h2>
+                    <p>박스 상태</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="grid">
+                            <div class="gr-box gr-box--primary">Primary 상태</div>
+                            <div class="gr-box gr-box--success">Success 상태</div>
+                            <div class="gr-box gr-box--warning">Warning 상태</div>
+                            <div class="gr-box gr-box--danger">Danger 상태</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+/* ==========================================================================
+   Segment Group Template
+   ========================================================================== */
+
+.gr-segment-group {
+  display: inline-flex;
+  background-color: $color-gray-100;
+  border-radius: $border-radius-md;
+  padding: 0.2rem;
+
+  &__item {
+    position: relative;
+    flex: 1;
+  }
+
+  &__input {
+    @include visually-hidden;
+  }
+
+  &__label {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    text-align: center;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-gray-600;
+    cursor: pointer;
+    border-radius: $border-radius-sm;
+    transition: all $transition-normal;
+
+    &:hover {
+      color: $color-gray-900;
+    }
+  }
+
+  &__input:checked + &__label {
+    background-color: $color-white;
+    color: $color-gray-900;
+    box-shadow: $shadow-sm;
+  }
+
+  &__input:focus + &__label {
+    @include focus-ring;
+  }
+
+  /* Sizes */
+  &--sm {
+    .gr-segment-group__label {
+      padding: $spacing-xs $spacing-sm;
+      font-size: $font-size-xs;
+    }
+  }
+
+  &--lg {
+    .gr-segment-group__label {
+      padding: $spacing-md $spacing-lg;
+      font-size: $font-size-base;
+    }
+  }
+
+  /* Variants */
+  &--outline {
+    background-color: transparent;
+    border: $border-width-thin solid $color-gray-300;
+    padding: 0;
+
+    .gr-segment-group__label {
+      border-radius: 0;
+      border-right: $border-width-thin solid $color-gray-300;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    .gr-segment-group__input:checked + .gr-segment-group__label {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: none;
+    }
+  }
+
+  &--pills {
+    background-color: transparent;
+    padding: 0;
+    gap: $spacing-sm;
+
+    .gr-segment-group__label {
+      border-radius: $border-radius-full;
+      background-color: $color-gray-100;
+    }
+
+    .gr-segment-group__input:checked + .gr-segment-group__label {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: none;
+    }
+  }
+}

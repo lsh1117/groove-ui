@@ -1,0 +1,11 @@
+/* Groove UI - Button Component CSS */
+/* This file contains the CSS for the Button component */
+
+.gr-spin {
+  animation: gr-spin 1s linear infinite;
+}
+
+@keyframes gr-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

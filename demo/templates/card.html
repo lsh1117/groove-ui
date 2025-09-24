@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Card - Groove UI</title>
+    <link rel="stylesheet" href="../assets/demo.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+    <style>
+        body {
+            padding: 24px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="section-header">
+            <h1>Card</h1>
+            <p>Card 컴포넌트의 예제를 확인하고 코드로 바로 복사하세요.</p>
+        </div>
+        <div class="section-body">
+            <!-- 카드 제목, 본문, 푸터 예제 -->
+            <article>
+                <div class="article-header">
+                    <h2>수평</h2>
+                    <p>카드 제목, 본문, 푸터 예제</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-card">
+                            <div class="gr-card__header">
+                                <h3 class="gr-card__title">카드 제목</h3>
+                                <div class="gr-card__subtitle">설명 텍스트</div>
+                            </div>
+                            <div class="gr-card__body">
+                                <p class="gr-card__text">카드 본문 내용입니다. 여러 줄의 텍스트가 들어갈 수 있습니다.</p>
+                            </div>
+                            <div class="gr-card__footer">
+                                <button class="gr-btn gr-btn--secondary">취소</button>
+                                <button class="gr-btn gr-btn--primary">확인</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- elevated 카드 -->
+            <article>
+                <div class="article-header">
+                    <h2>elevated</h2>
+                    <p>그림자와 호버 효과가 있는 카드</p>
+                </div>
+                <div class="article-body">
+                    <div class="group">
+                        <div class="gr-card gr-card--elevated is-hoverable">
+                            <div class="gr-card__header gr-card__header--highlight">
+                                <h3 class="gr-card__title">Elevated</h3>
+                            </div>
+                            <div class="gr-card__body">그림자와 호버 효과가 있는 카드</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <div class="section-footer"></div>
+    </section>
+    <script src="../assets/demo.js"></script>
+</body>
+
+</html>

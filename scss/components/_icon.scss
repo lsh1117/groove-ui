@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Icon Component
+   ========================================================================== */
+
+.gr-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+
+  /* Sizes */
+  &--xs { font-size: 1.2rem; }
+  &--sm { font-size: 1.4rem; }
+  &--md { font-size: 1.6rem; }
+  &--lg { font-size: 2rem; }
+  &--xl { font-size: 2.4rem; }
+  &--2xl { font-size: 3.2rem; }
+
+  /* Colors */
+  &--primary { color: $color-primary; }
+  &--secondary { color: $color-secondary; }
+  &--success { color: $color-success; }
+  &--danger { color: $color-danger; }
+  &--warning { color: $color-warning; }
+  &--info { color: $color-info; }
+  &--light { color: $color-light; }
+  &--dark { color: $color-dark; }
+}

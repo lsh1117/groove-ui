@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Text Field Component
+   ========================================================================== */
+
+.gr-textfield {
+  @include form-element-base;
+
+  /* Text field sizes */
+  &--sm {
+    padding: $spacing-xs $spacing-sm;
+    font-size: $font-size-sm;
+  }
+
+  &--lg {
+    padding: $spacing-md $spacing-lg;
+    font-size: $font-size-lg;
+  }
+
+  /* Text field variants */
+  &--outline {
+    background-color: transparent;
+    border: $border-width-thin solid $color-gray-300;
+
+    &:focus {
+      background-color: $color-white;
+    }
+  }
+
+  &--filled {
+    background-color: $color-gray-100;
+    border: $border-width-thin solid transparent;
+
+    &:focus {
+      background-color: $color-white;
+      border-color: $color-primary;
+    }
+  }
+
+  &--underline {
+    background-color: transparent;
+    border: none;
+    border-bottom: $border-width-thin solid $color-gray-300;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    &:focus {
+      border-bottom-color: $color-primary;
+      box-shadow: none;
+    }
+  }
+
+  /* Text field states */
+  &.is-valid {
+    border-color: $color-success;
+
+    &:focus {
+      border-color: $color-success;
+      box-shadow: 0 0 0 3px rgba($color-success, 0.1);
+    }
+  }
+
+  &.is-invalid {
+    border-color: $color-danger;
+
+    &:focus {
+      border-color: $color-danger;
+      box-shadow: 0 0 0 3px rgba($color-danger, 0.1);
+    }
+  }
+
+  /* Readonly state */
+  &[readonly] {
+    background-color: $color-gray-50;
+    cursor: default;
+  }
+}

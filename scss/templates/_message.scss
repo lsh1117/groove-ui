@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Message Template
+   ========================================================================== */
+
+.gr-message {
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-md;
+  border-radius: $border-radius-md;
+  border: $border-width-thin solid transparent;
+  margin-bottom: $spacing-md;
+
+  &__icon {
+    flex-shrink: 0;
+    margin-right: $spacing-sm;
+    font-size: $font-size-lg;
+  }
+
+  &__content {
+    flex: 1;
+    font-size: $font-size-sm;
+    line-height: $line-height-normal;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__close {
+    @include button-reset;
+    flex-shrink: 0;
+    margin-left: $spacing-sm;
+    padding: $spacing-xs;
+    color: inherit;
+    opacity: 0.7;
+    border-radius: $border-radius-sm;
+    transition: opacity $transition-normal;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  /* Variants */
+  &--info {
+    background-color: rgba($color-info, 0.1);
+    border-color: rgba($color-info, 0.2);
+    color: darken($color-info, 20%);
+
+    .gr-message__icon {
+      color: $color-info;
+    }
+  }
+
+  &--success {
+    background-color: rgba($color-success, 0.1);
+    border-color: rgba($color-success, 0.2);
+    color: darken($color-success, 20%);
+
+    .gr-message__icon {
+      color: $color-success;
+    }
+  }
+
+  &--warning {
+    background-color: rgba($color-warning, 0.1);
+    border-color: rgba($color-warning, 0.2);
+    color: darken($color-warning, 20%);
+
+    .gr-message__icon {
+      color: $color-warning;
+    }
+  }
+
+  &--danger {
+    background-color: rgba($color-danger, 0.1);
+    border-color: rgba($color-danger, 0.2);
+    color: darken($color-danger, 20%);
+
+    .gr-message__icon {
+      color: $color-danger;
+    }
+  }
+
+  /* Sizes */
+  &--sm {
+    padding: $spacing-sm;
+    font-size: $font-size-xs;
+
+    .gr-message__icon {
+      font-size: $font-size-base;
+    }
+  }
+
+  &--lg {
+    padding: $spacing-lg;
+    font-size: $font-size-base;
+
+    .gr-message__icon {
+      font-size: $font-size-xl;
+    }
+  }
+
+  /* Dismissible */
+  &--dismissible {
+    .gr-message__content {
+      margin-right: $spacing-sm;
+    }
+  }
+}

@@ -1,0 +1,155 @@
+/* ==========================================================================
+   Search Template
+   ========================================================================== */
+
+.gr-search {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &__input {
+    @include form-element-base;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  &__icon {
+    position: absolute;
+    left: $spacing-sm;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-gray-400;
+    pointer-events: none;
+  }
+
+  &__clear {
+    @include button-reset;
+    position: absolute;
+    right: $spacing-sm;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $color-gray-400;
+    padding: $spacing-xs;
+    border-radius: $border-radius-sm;
+    transition: color $transition-normal, background-color $transition-normal;
+
+    &:hover {
+      color: $color-gray-600;
+      background-color: $color-gray-100;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: z-index(dropdown);
+    background-color: $color-white;
+    border: $border-width-thin solid $color-gray-300;
+    border-top: none;
+    border-radius: 0 0 $border-radius-md $border-radius-md;
+    box-shadow: $shadow-lg;
+    max-height: 20rem;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity $transition-normal, visibility $transition-normal, transform $transition-normal;
+
+    &.is-show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__result {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    color: $color-gray-700;
+    text-decoration: none;
+    border-bottom: $border-width-thin solid $color-gray-200;
+    transition: background-color $transition-normal;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $color-gray-50;
+    }
+
+    &.is-highlighted {
+      background-color: rgba($color-primary, 0.1);
+      color: $color-primary;
+    }
+  }
+
+  &__result-title {
+    font-weight: $font-weight-medium;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__result-description {
+    font-size: $font-size-sm;
+    color: $color-gray-600;
+  }
+
+  &__no-results {
+    padding: $spacing-lg;
+    text-align: center;
+    color: $color-gray-500;
+    font-size: $font-size-sm;
+  }
+
+  /* Sizes */
+  &--sm {
+    .gr-search__input {
+      padding: $spacing-xs $spacing-sm;
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+      font-size: $font-size-sm;
+    }
+
+    .gr-search__icon,
+    .gr-search__clear {
+      font-size: $font-size-sm;
+    }
+  }
+
+  &--lg {
+    .gr-search__input {
+      padding: $spacing-md $spacing-lg;
+      padding-left: 3.5rem;
+      padding-right: 3.5rem;
+      font-size: $font-size-lg;
+    }
+
+    .gr-search__icon,
+    .gr-search__clear {
+      font-size: $font-size-lg;
+    }
+  }
+
+  /* Variants */
+  &--outline {
+    .gr-search__input {
+      background-color: transparent;
+      border: $border-width-thin solid $color-gray-300;
+    }
+  }
+
+  &--filled {
+    .gr-search__input {
+      background-color: $color-gray-100;
+      border: $border-width-thin solid transparent;
+    }
+  }
+}
